@@ -1,4 +1,4 @@
-function romanNumerals(number) {
+function romanNumeralConverter(number) {
   var numerals = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
   var numeral = ""
   if (number === 1) {
@@ -17,5 +17,19 @@ function romanNumerals(number) {
     numeral = numerals[6];
   }
   return numeral;
+}
 
+function breakDownNumber(number) {
+  var nums = [1000, 500, 100, 50, 10, 5, 1];
+  var array = [];
+  for (var i = 0; i < nums.length; i++) {
+    if (number/nums[i] > 1) {
+      var maxLoop = number/nums[i]
+      for (var j = 1; j <= maxLoop; j++) {
+        array.push(nums[i]);
+        number -= nums[i];
+      }
+    }
+  }
+  return array;
 }
