@@ -38,10 +38,12 @@ function breakDownNumber(number) {
         if(array[array.length-1]===5 || array[array.length-1]===50 || array[array.length-1]===500) {
           array[array.length-1] = nums[i];
           array.push(nums[i-2]);
+          number -= (4*nums[i]);
+          console.log(number);
         } else {
           array.push(nums[i]);
           array.push(nums[i-1]);
-          number -= (4*nums);
+          number -= (4*nums[i]);
         }
       } else {
         for (var j = 1; j <= maxLoop; j++) {
