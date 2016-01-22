@@ -35,8 +35,14 @@ function breakDownNumber(number) {
     if (number/nums[i] >= 1) {
       var maxLoop = number/nums[i]
       if (maxLoop >= 4) {
-        array.push(nums[i]);
-        array.push(nums[i-1]);
+        if(array[array.length-1]===5 || array[array.length-1]===50 || array[array.length-1]===500) {
+          array[array.length-1] = nums[i];
+          array.push(nums[i-2]);
+        } else {
+          array.push(nums[i]);
+          array.push(nums[i-1]);
+          number -= (4*nums);
+        }
       } else {
         for (var j = 1; j <= maxLoop; j++) {
           array.push(nums[i]);

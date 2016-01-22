@@ -3,7 +3,7 @@ describe('romanNumeral',function() {
     expect(romanNumeral(511)).to.equal('DXI');
   });
   it('will properly display roman numerals when there are more than three of the same character in a row',function() {
-    expect(romanNumeral(4)).to.eql("IV");
+    expect(romanNumeral(400)).to.eql("CD");
   })
 });
 
